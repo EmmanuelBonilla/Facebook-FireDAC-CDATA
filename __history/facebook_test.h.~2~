@@ -23,9 +23,6 @@
 #include <FMX.ScrollBox.hpp>
 #include <FMX.StdCtrls.hpp>
 #include <FMX.Types.hpp>
-#include <FireDAC.Phys.SQLite.hpp>
-#include <FireDAC.Phys.SQLiteDef.hpp>
-#include <FireDAC.Stan.ExprFuncs.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -34,7 +31,6 @@ __published:	// IDE-managed Components
 	TButton *connectButton;
 	TFDConnection *FDConnection1;
 	TMemo *outputMemo;
-	TFDPhysSQLiteDriverLink *FDPhysSQLiteDriverLink1;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
