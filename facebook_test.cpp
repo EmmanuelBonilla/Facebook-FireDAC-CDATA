@@ -7,6 +7,8 @@
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+#pragma link "FireDAC.Phys.CDataFacebook"
+#pragma link "FireDAC.Phys.CDataFacebookDef"
 #pragma resource "*.fmx"
 TForm1 *Form1;
 
@@ -76,7 +78,30 @@ void __fastcall TForm1::executeButtonClick(TObject *Sender)
 	{
 		query -> Close();
 		query -> DisposeOf();
-    }
-}
-//---------------------------------------------------------------------------/---------------------------------------------------------------------------
+	}
 
+}
+
+//---------------------------------------------------------------------------
+void __fastcall TForm1::facebookConnectButtonClick(TObject *Sender)
+{
+	outputMemo -> Text = " ";
+
+	//Set the path of database file
+	FDConnection1 -> Name = "SQLTest";
+	FDConnection1 -> DriverName = "CData.Facebook";
+
+
+	try //Establish Connection
+	{
+		FDConnection1 -> Open();
+		executeButton -> Enabled = true;
+		outputMemo -> Lines ->Add ("Connection established!");
+	}
+	catch (Exception& E)
+	{
+		outputMemo -> Text = "Exception raised with message" + E.Message;
+	}
+}
+
+//---------------------------------------------------------------------------

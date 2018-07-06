@@ -11,24 +11,27 @@ object Form1: TForm1
   object executeButton: TButton
     Enabled = False
     StyledSettings = [Size, Style, FontColor]
-    Position.X = 416.000000000000000000
+    Position.X = 112.000000000000000000
     Position.Y = 368.000000000000000000
-    Size.Width = 121.000000000000000000
+    Size.Width = 89.000000000000000000
     Size.Height = 41.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    Text = 'Execute'
+    Text = 'Local Execute'
     TextSettings.Font.Family = 'Courier New'
-    OnClick = executeButtonClick
+    TextSettings.WordWrap = True
   end
   object connectButton: TButton
-    Position.X = 128.000000000000000000
+    StyledSettings = [Size, Style, FontColor]
+    Position.X = 8.000000000000000000
     Position.Y = 368.000000000000000000
-    Size.Width = 121.000000000000000000
+    Size.Width = 89.000000000000000000
     Size.Height = 41.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    Text = 'Connect'
+    Text = 'Local Connect'
+    TextSettings.Font.Family = 'Courier New'
+    TextSettings.WordWrap = True
     OnClick = connectButtonClick
   end
   object outputMemo: TMemo
@@ -45,12 +48,47 @@ object Form1: TForm1
     Viewport.Width = 605.000000000000000000
     Viewport.Height = 349.000000000000000000
   end
+  object facebookConnect: TButton
+    StyledSettings = [Size, Style, FontColor]
+    Position.X = 304.000000000000000000
+    Position.Y = 368.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = 'FB Connect'
+    TextSettings.Font.Family = 'Courier New'
+    TextSettings.WordWrap = True
+  end
+  object facebookExecute: TButton
+    StyledSettings = [Size, Style, FontColor]
+    Position.X = 456.000000000000000000
+    Position.Y = 368.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'FB Execute'
+    TextSettings.Font.Family = 'Courier New'
+    TextSettings.WordWrap = True
+  end
   object FDConnection1: TFDConnection
-    Left = 168
-    Top = 424
+    Left = 32
+    Top = 432
   end
   object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
-    Left = 464
-    Top = 424
+    Left = 144
+    Top = 432
+  end
+  object FDPhysCDataFacebookDriverLink1: TFDPhysCDataFacebookDriverLink
+    DriverID = 'CDataFacebook'
+    Left = 504
+    Top = 432
+  end
+  object FBConnection: TFDConnection
+    Params.Strings = (
+      'DriverID=CDataFacebook')
+    Left = 336
+    Top = 432
   end
 end

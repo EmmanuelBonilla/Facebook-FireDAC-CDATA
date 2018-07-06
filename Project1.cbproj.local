@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/07/02 11:23:38.000.116,=C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018/07/02 11:23:38.000.155,=C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2018/07/06 10:17:22.656,=C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2018/07/06 10:17:25.704,=C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018/07/06 10:21:09.862,C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Facebook-FireDAC-CDATA\facebook_test.fmx=C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2018/07/06 10:21:09.862,C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Facebook-FireDAC-CDATA\facebook_test.h=C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2018/07/06 10:21:09.862,C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Facebook-FireDAC-CDATA\facebook_test.cpp=C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2018/07/06 11:55:41.185,C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Facebook-FireDAC-CDATA\Project1PCH1.h=C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018/07/06 11:55:44.961,C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Facebook-FireDAC-CDATA\Project1.cbproj=C:\Users\Manny\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -26,6 +26,9 @@
 #include <FireDAC.Phys.SQLite.hpp>
 #include <FireDAC.Phys.SQLiteDef.hpp>
 #include <FireDAC.Stan.ExprFuncs.hpp>
+#include "FireDAC.Phys.CDataFacebook.hpp"
+#include "FireDAC.Phys.CDataFacebookDef.hpp"
+#include <FMX.Edit.hpp>
 
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
@@ -36,9 +39,13 @@ __published:	// IDE-managed Components
 	TFDConnection *FDConnection1;
 	TMemo *outputMemo;
 	TFDPhysSQLiteDriverLink *FDPhysSQLiteDriverLink1;
+	TFDPhysCDataFacebookDriverLink *FDPhysCDataFacebookDriverLink1;
+	TFDConnection *FBConnection;
+	TButton *facebookConnect;
+	TButton *facebookExecute;
 	void __fastcall connectButtonClick(TObject *Sender);
-	void __fastcall executeButtonClick(TObject *Sender);
-
+    void __fastcall executeButtonClick(TObject *Sender);
+	void __fastcall facebookConnectButtonClick(TObject *Sender);
 private:	// User declarations
 
 public:		// User declarations
@@ -52,5 +59,4 @@ extern PACKAGE TForm1 *Form1;
 //---------------------------------------------------------------------------
 
 #endif
-
 
