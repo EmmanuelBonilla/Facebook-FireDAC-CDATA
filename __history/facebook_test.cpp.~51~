@@ -51,7 +51,15 @@ void __fastcall TForm1::facebookExecuteButtonClick(TObject *Sender)
 
 		while (!FDQuery1 -> Eof)
 		{
-			outputMemo ->Lines ->Add(FDQuery1->Fields[i].FieldByName());
+			for (i = 0; i < FDQuery1->FieldCount; i++) 
+			{
+				Db::TField* field = FDQuery1->Fields->Fields[i];
+				String fieldValue = field->IsNull ? String("(null)") : field->AsString;
+				
+				outputMemo ->Lines ->Add(field->FieldName + " = " + fieldValue);
+			}
+			outputMemo ->Lines ->Add("------");
+	
 			FDQuery1 ->Next();
 		}
 	}

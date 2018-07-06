@@ -19,24 +19,20 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 }
 
 
-//---------------------------------------------------------------------------
 void __fastcall TForm1::facebookConnectButtonClick(TObject *Sender)
 {
 	outputMemo -> Text = " ";
 
-	//Set the path of database file
-//	FDConnection -> Name = "SQLTest";
-//	FDConnection -> DriverName = "CDataFacebook";
-	
-	try //Establish Connection
+	try
 	{
-		FDConnection -> Open();
-		facebookExecute -> Enabled = true;
-		outputMemo -> Lines -> Add ("Connection established!");
+		FDConnection->Open();
+		facebookExecute->Enabled = true;
+		outputMemo->Lines->Add ("Connection established!");
 	}
+
 	catch (Exception& E)
 	{
-		outputMemo -> Text = "Exception raised with message" + E.Message;
+		outputMemo->Text = "Error: " + E.Message;
 	}
 }
 
@@ -46,8 +42,8 @@ void __fastcall TForm1::facebookExecuteButtonClick(TObject *Sender)
 	int i;
 	try
 	{
-		FDQuery1 ->SQL ->Text = "SELECT * FROM Posts LIMIT 10";
-		FDQuery1 ->Open();
+		FDQuery1->SQL->Text = "SELECT * FROM Posts LIMIT 1";
+		FDQuery1->Open();
 
 		while (!FDQuery1 -> Eof)
 		{
@@ -55,20 +51,17 @@ void __fastcall TForm1::facebookExecuteButtonClick(TObject *Sender)
 			{
 				Db::TField* field = FDQuery1->Fields->Fields[i];
 				String fieldValue = field->IsNull ? String("(null)") : field->AsString;
-				
 				outputMemo ->Lines ->Add(field->FieldName + " = " + fieldValue);
 			}
 			outputMemo ->Lines ->Add("------");
-	
+
 			FDQuery1 ->Next();
 		}
 	}
 	__finally
 	{
 		FDQuery1 ->Close();
-
 	}
-
 }
 
 

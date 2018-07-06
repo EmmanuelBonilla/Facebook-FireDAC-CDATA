@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'FB CDATA'
+  Caption = 'FaceBook Data'
   ClientHeight = 480
   ClientWidth = 640
   FormFactor.Width = 320
@@ -38,7 +38,7 @@ object Form1: TForm1
   object facebookExecute: TButton
     Enabled = False
     StyledSettings = [Size, Style, FontColor]
-    Position.X = 376.000000000000000000
+    Position.X = 248.000000000000000000
     Position.Y = 376.000000000000000000
     Size.Width = 89.000000000000000000
     Size.Height = 41.000000000000000000

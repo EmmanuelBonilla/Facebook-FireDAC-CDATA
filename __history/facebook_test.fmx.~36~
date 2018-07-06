@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'FB CDATA'
   ClientHeight = 480
   ClientWidth = 640
   FormFactor.Width = 320
@@ -33,11 +33,12 @@ object Form1: TForm1
     Text = 'FB Connect'
     TextSettings.Font.Family = 'Courier New'
     TextSettings.WordWrap = True
+    OnClick = facebookConnectButtonClick
   end
   object facebookExecute: TButton
     Enabled = False
     StyledSettings = [Size, Style, FontColor]
-    Position.X = 376.000000000000000000
+    Position.X = 248.000000000000000000
     Position.Y = 376.000000000000000000
     Size.Width = 89.000000000000000000
     Size.Height = 41.000000000000000000
@@ -46,19 +47,26 @@ object Form1: TForm1
     Text = 'FB Execute'
     TextSettings.Font.Family = 'Courier New'
     TextSettings.WordWrap = True
+    OnClick = facebookExecuteButtonClick
   end
   object FDPhysCDataFacebookDriverLink1: TFDPhysCDataFacebookDriverLink
     DriverID = 'CDataFacebook'
     Left = 408
     Top = 424
   end
-  object TFDConnection: TFDConnection
+  object FDConnection: TFDConnection
     Params.Strings = (
       'ProxyUser=BASIC'
       'InitiateOAuth=GETANDREFRESH'
       'CacheMetadata='
       'DriverID=CDataFacebook')
+    Connected = True
     Left = 144
-    Top = 424
+    Top = 432
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection
+    Left = 264
+    Top = 432
   end
 end

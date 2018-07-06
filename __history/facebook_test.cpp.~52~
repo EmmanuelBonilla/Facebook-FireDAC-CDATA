@@ -19,16 +19,9 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 }
 
 
-//---------------------------------------------------------------------------
 void __fastcall TForm1::facebookConnectButtonClick(TObject *Sender)
 {
 	outputMemo -> Text = " ";
-
-	//Set the path of database file
-//	FDConnection -> Name = "SQLTest";
-//	FDConnection -> DriverName = "CDataFacebook";
-	
-	try //Establish Connection
 	{
 		FDConnection -> Open();
 		facebookExecute -> Enabled = true;
@@ -53,8 +46,12 @@ void __fastcall TForm1::facebookExecuteButtonClick(TObject *Sender)
 		{
 			for (i = 0; i < FDQuery1->FieldCount; i++) 
 			{
-				outputMemo ->Lines ->Add(FDQuery1->Fields[i].FieldByName());
+				Db::TField* field = FDQuery1->Fields->Fields[i];
+				String fieldValue = field->IsNull ? String("(null)") : field->AsString;
+				
+				outputMemo ->Lines ->Add(field->FieldName + " = " + fieldValue);
 			}
+			outputMemo ->Lines ->Add("------");
 	
 			FDQuery1 ->Next();
 		}
