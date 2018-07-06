@@ -29,23 +29,25 @@
 #include "FireDAC.Phys.CDataFacebook.hpp"
 #include "FireDAC.Phys.CDataFacebookDef.hpp"
 #include <FMX.Edit.hpp>
+#include <FireDAC.Comp.DataSet.hpp>
+#include <FireDAC.DApt.hpp>
+#include <FireDAC.DApt.Intf.hpp>
+#include <FireDAC.DatS.hpp>
+#include <FireDAC.Stan.Param.hpp>
 
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
-	TButton *executeButton;
-	TButton *connectButton;
-	TFDConnection *FDConnection1;
 	TMemo *outputMemo;
-	TFDPhysSQLiteDriverLink *FDPhysSQLiteDriverLink1;
 	TFDPhysCDataFacebookDriverLink *FDPhysCDataFacebookDriverLink1;
-	TFDConnection *FBConnection;
+	TFDConnection *FDConnection;
 	TButton *facebookConnect;
 	TButton *facebookExecute;
-	void __fastcall connectButtonClick(TObject *Sender);
-    void __fastcall executeButtonClick(TObject *Sender);
+	TFDQuery *FDQuery1;
+
 	void __fastcall facebookConnectButtonClick(TObject *Sender);
+	void __fastcall facebookExecuteButtonClick(TObject *Sender);
 private:	// User declarations
 
 public:		// User declarations

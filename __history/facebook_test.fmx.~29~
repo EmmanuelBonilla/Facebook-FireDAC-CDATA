@@ -1,0 +1,64 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'FB CDATA'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object outputMemo: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    StyledSettings = [Size, Style, FontColor]
+    TextSettings.Font.Family = 'Courier New'
+    Position.X = 16.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 609.000000000000000000
+    Size.Height = 353.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 605.000000000000000000
+    Viewport.Height = 349.000000000000000000
+  end
+  object facebookConnect: TButton
+    StyledSettings = [Size, Style, FontColor]
+    Position.X = 120.000000000000000000
+    Position.Y = 376.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'FB Connect'
+    TextSettings.Font.Family = 'Courier New'
+    TextSettings.WordWrap = True
+  end
+  object facebookExecute: TButton
+    StyledSettings = [Size, Style, FontColor]
+    Position.X = 376.000000000000000000
+    Position.Y = 376.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'FB Execute'
+    TextSettings.Font.Family = 'Courier New'
+    TextSettings.WordWrap = True
+  end
+  object FDPhysCDataFacebookDriverLink1: TFDPhysCDataFacebookDriverLink
+    DriverID = 'CDataFacebook'
+    Left = 408
+    Top = 424
+  end
+  object TFDConnection: TFDConnection
+    Params.Strings = (
+      'ProxyUser=BASIC'
+      'InitiateOAuth=GETANDREFRESH'
+      'CacheMetadata='
+      'DriverID=CDataFacebook')
+    Connected = True
+    Left = 144
+    Top = 432
+  end
+end
