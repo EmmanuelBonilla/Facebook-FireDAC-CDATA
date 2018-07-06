@@ -17,14 +17,14 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::connectButtonClick(TObject *Sender)
+void __fastcall TconnectButton::connectButtonClick(TObject *Sender)
 {
 	outputMemo -> Text = " ";
 
 	//Set the path of database file
 	FDConnection1 -> DriverName = "SQLITE";
 	FDConnection1 -> Params -> Values ["DataBase"] =
-	"C:\Users\Public\Documents\Embarcadero\Studio\19.0\Samples\Data";
+	"C:\\Users\\Public\\Documents\\Embarcadero\\Studio\\19.0\\Samples\\Data\\Employees.s3db";
 
 	try //Establish Connection
 	{
@@ -39,7 +39,7 @@ void __fastcall TForm1::connectButtonClick(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::executeButtonClick(TObject *Sender)
+void __fastcall TconnectButton::executeButtonClick(TObject *Sender)
 {
 	TFDQuery *query;
 	query = new TFDQuery (NULL);

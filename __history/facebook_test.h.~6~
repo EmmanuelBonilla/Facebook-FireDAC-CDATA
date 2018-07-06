@@ -36,8 +36,8 @@ __published:	// IDE-managed Components
 	TFDConnection *FDConnection1;
 	TMemo *outputMemo;
 	TFDPhysSQLiteDriverLink *FDPhysSQLiteDriverLink1;
-	void __fastcall connectButtonClick(TObject *Sender);
-	void __fastcall executeButtonClick(TObject *Sender);
+	void __fastcall TForm1::connectButtonClick(TObject *Sender)
+	void __fastcall TForm1::executeButtonClick(TObject *Sender)
 
 private:	// User declarations
 

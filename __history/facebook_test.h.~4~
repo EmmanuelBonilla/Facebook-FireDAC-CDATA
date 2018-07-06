@@ -26,7 +26,6 @@
 #include <FireDAC.Phys.SQLite.hpp>
 #include <FireDAC.Phys.SQLiteDef.hpp>
 #include <FireDAC.Stan.ExprFuncs.hpp>
-
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -36,21 +35,15 @@ __published:	// IDE-managed Components
 	TFDConnection *FDConnection1;
 	TMemo *outputMemo;
 	TFDPhysSQLiteDriverLink *FDPhysSQLiteDriverLink1;
-	void __fastcall connectButtonClick(TObject *Sender);
-	void __fastcall executeButtonClick(TObject *Sender);
-
 private:	// User declarations
-
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
-
+	void __fastcall TForm1::connectButtonClick(TObject *Sender)
+    void __fastcall TForm1::executeButtonClick(TObject *Sender)
 };
-
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;
-
 //---------------------------------------------------------------------------
-
 #endif
 
 
