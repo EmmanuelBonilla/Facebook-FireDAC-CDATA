@@ -9,8 +9,6 @@ object Form1: TForm1
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
   object executeButton: TButton
-    Enabled = False
-    StyledSettings = [Size, Style, FontColor]
     Position.X = 416.000000000000000000
     Position.Y = 368.000000000000000000
     Size.Width = 121.000000000000000000
@@ -18,7 +16,6 @@ object Form1: TForm1
     Size.PlatformDefault = False
     TabOrder = 0
     Text = 'Execute'
-    TextSettings.Font.Family = 'Courier New'
     OnClick = executeButtonClick
   end
   object connectButton: TButton
@@ -34,8 +31,6 @@ object Form1: TForm1
   object outputMemo: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
-    StyledSettings = [Size, Style, FontColor]
-    TextSettings.Font.Family = 'Courier New'
     Position.X = 16.000000000000000000
     Position.Y = 8.000000000000000000
     Size.Width = 609.000000000000000000

@@ -23,13 +23,14 @@ void __fastcall TForm1::connectButtonClick(TObject *Sender)
 
 	//Set the path of database file
 	FDConnection1 -> DriverName = "SQLITE";
-	FDConnection1 -> Params -> Values ["DataBase"] = "C:\\Users\\Public\\Documents\\Embarcadero\\Studio\\19.0\\Samples\\Data\\Employees.s3db";
+	FDConnection1 -> Params -> Values ["DataBase"] =
+	"C:\Users\Public\Documents\Embarcadero\Studio\19.0\Samples\Data";
 
 	try //Establish Connection
 	{
 		FDConnection1 -> Open();
 		executeButton -> Enabled = true;
-		outputMemo -> Lines ->Add ("Connection established!");
+		outputMemo -> Lines ->Add("Connection established!");
 	}
 	catch (Exception& E)
 	{
@@ -54,20 +55,13 @@ void __fastcall TForm1::executeButtonClick(TObject *Sender)
 
 		//Add the field names from table
 		TVarRec args[3] = {"ID", "NAME", "DEPARTMENT"};
-		outputMemo -> Lines -> Add (System::UnicodeString::
-		Format ("|%8s |%25s |%25s |", args, ARRAYSIZE(args) -1));
+		outputMemo -> Lines -> Add (System::UnicodeString::Format("|%8s |%25s |%25s |", args, ARRAYSIZE(args) -1));
 
 		//Add one line to the memo for each record in the table
 		while (!query -> Eof)
 		{
-			TVarRec arguments[3] = {query -> FieldByName ("ID") -> AsInteger,
-									query->FieldByName ("Name") -> AsString, 
-									query-> FieldByName ("Department") -> 
-									AsString};
-									
-			outputMemo -> Lines -> Add (System::UnicodeString::
-										Format("|%8d |%-25s |%-25s |", 
-										arguments, ARRAYSIZE(arguments) -1));
+			TVarRec arguments[3] = {query -> FieldByName ("ID") -> AsInteger, query->FieldByName ("Name") -> AsString, query-> FieldByName ("Department") -> AsString};
+			outputMemo -> Lines -> Add (System::UnicodeString::Format("|%8d |%-25s |%-25s |", arguments, ARRAYSIZE(arguments) -1));
 			query -> Next();
 		}
 	}

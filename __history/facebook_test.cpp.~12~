@@ -23,13 +23,13 @@ void __fastcall TForm1::connectButtonClick(TObject *Sender)
 
 	//Set the path of database file
 	FDConnection1 -> DriverName = "SQLITE";
-	FDConnection1 -> Params -> Values ["DataBase"] = "C:\\Users\\Public\\Documents\\Embarcadero\\Studio\\19.0\\Samples\\Data\\Employees.s3db";
+	FDConnection1 -> Params -> Values ["DataBase"] = "C:\Users\Public\Documents\Embarcadero\Studio\19.0\Samples\Data\Employees.s3db";
 
 	try //Establish Connection
 	{
 		FDConnection1 -> Open();
 		executeButton -> Enabled = true;
-		outputMemo -> Lines ->Add ("Connection established!");
+		outputMemo -> Lines ->Add("Connection established!");
 	}
 	catch (Exception& E)
 	{
