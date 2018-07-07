@@ -45,9 +45,11 @@ __published:	// IDE-managed Components
 	TButton *facebookConnect;
 	TButton *facebookExecute;
 	TFDQuery *FDQuery1;
+	TButton *searchButton;
 
 	void __fastcall facebookConnectButtonClick(TObject *Sender);
 	void __fastcall facebookExecuteButtonClick(TObject *Sender);
+	void __fastcall searchButtonClick(TObject *Sender);
 private:	// User declarations
 
 public:		// User declarations
